@@ -95,7 +95,7 @@ def spiral(nlines, degrees, increase):
 
 def sphere(size)
 	shade = 75
-t.color(0,0,shade)
+	t.color(0,0,shade)
 	while size > 0
 		t.begin_fill()
 		shape(30, size)	
