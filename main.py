@@ -93,9 +93,37 @@ def spiral(nlines, degrees, increase):
 #spiral(5000, 21, 0.1)
 #spiral (500, 121, 3)
 
-def sphere(size)
-	shade = 75
+def sphere(size):
+	shade = 125
 	t.color(0,0,shade)
-	while size > 0
+	while size > 0:
 		t.begin_fill()
 		shape(30, size)	
+		t.end_fill()
+		t.rt(90)
+		t.fd(1)
+		t.lt(90)
+		size -= .5
+		shade += 5
+		t.color(0,0,shade)
+
+#t.hideturtle()
+#sphere(15)
+
+def pattern():
+	sides = 5
+	spiral(nlines = 1000, degrees = 360/sides + 1)
+	increase = .5
+
+
+def pattern():
+	spiral(nlines = 100, degrees = 145, increase = 1)
+
+def moveturtle(x, y):
+	t.penup()
+	t.goto(x,y)
+	t.pendown()
+
+s.onkey(pattern, "space")
+s.onclick(moveturtle)
+s.listen()
